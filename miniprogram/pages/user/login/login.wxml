@@ -1,0 +1,82 @@
+<van-toast id="van-toast" />
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />
+<van-toast id="order-submit" />
+
+<view style="margin:30px;">
+  <view class="login_welcome">注册</view>
+  <view style="color:#130c0e;">为提供优质服务，需要获取您的以下信息</view>
+  <!-- <view style="color:#130c0e;">*你的公开信息（头像、昵称等）</view> -->
+</view>
+
+<view>
+  <form bindsubmit="onSubmit" bindreset="">
+    <view class="top">
+        <view class="input">
+            <van-cell-group>
+                <van-field
+                    name="name"
+                    required
+                    maxlength="10"
+                    autosize
+                    type="nickname"
+                    size="large"
+                    label="昵称"
+                    placeholder="请输入昵称"
+                />
+                <van-field
+                    name="age"
+                    required
+                    maxlength="3"
+                    autosize
+                    type="number"
+                    size="large"
+                    label="年龄"
+                    placeholder="请输入年龄"
+                />
+                <van-field
+                    name="disease"
+                    value="{{disease}}"
+                    required
+                    autosize
+                    readonly="true"
+                    size="large"
+                    label="所患病症"
+                    placeholder="点击此处搜索"
+                    bind:click-input="jumpToDiseaseChoose"
+                />
+            </van-cell-group>
+        </view>
+
+        <!-- <view class="login_but" style="display: flex; align-items: center;">
+          <van-button type="primary" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber" size="small" round color="#9b95c9"
+          style="margin-right: 30rpx;">绑定手机号</van-button>
+          <van-icon name="phone-o" />
+          <text style="margin-left: 8px;">{{phone}}</text>
+        </view> -->
+    </view>
+
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+
+    <view class="login_but">
+      <van-button formType="submit" type="primary" size="large" round color="#9b95c9">注册并登录</van-button>
+    </view>
+  </form>
+
+  <view style="margin:30px 30px 20px 30px; font-size: small;"> 
+    <van-checkbox-group value="{{ agree }}" bind:change="onChange">
+      <van-checkbox name="a">
+        同意《用户隐私条款》
+      </van-checkbox>
+    </van-checkbox-group>
+  </view>
+  <van-cell
+    is-link
+    title="用户隐私条款"
+    link-type="navigateTo"
+    title-style="color: #007AFF;"
+    url="../clause/clause"
+  />
+</view>

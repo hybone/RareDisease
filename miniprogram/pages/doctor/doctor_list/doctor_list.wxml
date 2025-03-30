@@ -1,0 +1,10 @@
+<van-toast id="van-toast" />
+
+<view wx:for="{{doctorsList}}" wx:key="_id" data-id="{{item._id}}" bindtap="jumpToDoctorDetail">
+  <order-item 
+      title="{{item.name}}"
+      desc="{{'擅长: ' + item.good_at}}"
+      thumb="{{item.avatarUrl}}"
+      price="{{item.rank}}"
+  />
+</view>

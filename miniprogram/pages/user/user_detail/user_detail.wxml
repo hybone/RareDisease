@@ -1,0 +1,34 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+<view class="user_info">
+    <image src="{{userInfo.avatarUrl}}" class="user_info_img"></image>
+    <view class="user_info_name">
+      <view style="font-weight: bold">{{userInfo.name}}</view>
+      <view style="font-size:small;color:gray;margin-top:15rpx;">{{userInfo.rank}}</view>
+    </view>
+  </view>
+
+
+<view class="detail-content">
+  <!-- <view class="info-card">
+    <view class="info-title">擅长</view>
+    <van-divider customStyle="margin-top:0%; margin-bottom:0%;"/>
+    <view class="info-item-container">
+      {{ userInfo.good_at }}
+    </view>
+  </view> -->
+
+  
+  <view class="info-card">
+    <view class="info-title">自我介绍</view>
+    <van-divider customStyle="margin-top:0%; margin-bottom:0%;"/>
+    <view class="info-item-container">
+      {{userInfo.introduction}}
+    </view>
+  </view>
+
+  <van-goods-action>
+    <van-goods-action-button color="#1E8449" text="留言" bind:click="jumpToContact"/>
+  </van-goods-action>
+</view>

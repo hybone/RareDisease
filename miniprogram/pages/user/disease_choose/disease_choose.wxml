@@ -1,0 +1,231 @@
+<van-toast id="van-toast" />
+
+<van-search value="{{ keyword }}" bind:change="search" placeholder="请输入搜索关键词" />
+
+<van-index-bar wx:if="{{keyword == ''}}">
+  <view>
+    <van-index-anchor index="A" />
+    <van-cell bind:click="handleClick" data-title="Alport 综合征" title="Alport 综合征" />
+    <van-cell bind:click="handleClick" data-title="Angelman 氏症候群（天使综合征）" title="Angelman 氏症候群（天使综合征）" />
+  </view>
+
+  <view>
+    <van-index-anchor index="B" />
+    <van-cell bind:click="handleClick" data-title="白化病" title="白化病" />
+    <van-cell bind:click="handleClick" data-title="半乳糖血症" title="半乳糖血症" />
+    <van-cell bind:click="handleClick" data-title="苯丙酮尿症" title="苯丙酮尿症" />
+    <van-cell bind:click="handleClick" data-title="卟啉病" title="卟啉病" />
+    <van-cell bind:click="handleClick" data-title="丙酸血症" title="丙酸血症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="C" />
+    <van-cell bind:click="handleClick" data-title="Castleman病" title="Castleman病" />
+    <van-cell bind:click="handleClick" data-title="纯合子家族性高胆固醇血症" title="纯合子家族性高胆固醇血症" />
+    <van-cell bind:click="handleClick" data-title="长链3-羟酰基辅酶A脱氢酶缺乏症" title="长链3-羟酰基辅酶A脱氢酶缺乏症" />
+    <van-cell bind:click="handleClick" data-title="成骨不全症（脆骨病）" title="成骨不全症（脆骨病）" />
+  </view>
+
+  <view>
+    <van-index-anchor index="D" />
+    <van-cell bind:click="handleClick" data-title="低碱性磷酸酶血症" title="低碱性磷酸酶血症" />
+    <van-cell bind:click="handleClick" data-title="低磷性佝偻病" title="低磷性佝偻病" />
+    <van-cell bind:click="handleClick" data-title="多灶性运动神经病" title="多灶性运动神经病" />
+    <van-cell bind:click="handleClick" data-title="多种酰基辅酶A脱氢酶缺乏症" title="多种酰基辅酶A脱氢酶缺乏症" />
+    <van-cell bind:click="handleClick" data-title="多发性硬化" title="多发性硬化" />
+    <van-cell bind:click="handleClick" data-title="多系统萎缩" title="多系统萎缩" />
+  </view>
+
+  <view>
+    <van-index-anchor index="E" />
+    <van-cell bind:click="handleClick" data-title="Erdheim-Chester病" title="Erdheim-Chester病" />
+  </view>
+
+  <view>
+    <van-index-anchor index="F" />
+    <van-cell bind:click="handleClick" data-title="非典型溶血性尿毒症" title="非典型溶血性尿毒症" />
+    <van-cell bind:click="handleClick" data-title="腓骨肌萎缩症" title="腓骨肌萎缩症" />
+    <van-cell bind:click="handleClick" data-title="法布雷病" title="法布雷病" />
+    <van-cell bind:click="handleClick" data-title="范可尼贫血" title="范可尼贫血" />
+    <van-cell bind:click="handleClick" data-title="枫糖尿症" title="枫糖尿症" />
+    <van-cell bind:click="handleClick" data-title="非综合征性耳聋" title="非综合征性耳聋" />
+    <van-cell bind:click="handleClick" data-title="肺泡蛋白沉积症" title="肺泡蛋白沉积症" />
+    <van-cell bind:click="handleClick" data-title="肺囊性纤维化" title="肺囊性纤维化" />
+  </view>
+
+  <view>
+    <van-index-anchor index="G" />
+    <van-cell bind:click="handleClick" data-title="瓜氨酸血症" title="瓜氨酸血症" />
+    <van-cell bind:click="handleClick" data-title="冠状动脉扩张病" title="冠状动脉扩张病" />
+    <van-cell bind:click="handleClick" data-title="戈谢病" title="戈谢病" />
+    <van-cell bind:click="handleClick" data-title="Gitelman 综合征" title="Gitelman 综合征" />
+    <van-cell bind:click="handleClick" data-title="高苯丙氨酸血症" title="高苯丙氨酸血症" />
+    <van-cell bind:click="handleClick" data-title="肝豆状核变性" title="肝豆状核变性" />
+    <van-cell bind:click="handleClick" data-title="谷固醇血症" title="谷固醇血症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="H" />
+    <van-cell bind:click="handleClick" data-title="亨廷顿舞蹈病" title="亨廷顿舞蹈病" />
+    <van-cell bind:click="handleClick" data-title="HHH综合征" title="HHH综合征" />
+    <van-cell bind:click="handleClick" data-title="黑斑息肉综合征" title="黑斑息肉综合征" />
+  </view>
+
+  <view>
+    <van-index-anchor index="I" />
+    <van-cell bind:click="handleClick" data-title="IgG4相关性疾病" title="IgG4相关性疾病" />
+  </view>
+
+  <view>
+    <van-index-anchor index="J" />
+    <van-cell bind:click="handleClick" data-title="肌萎缩侧索硬化" title="肌萎缩侧索硬化" />
+    <van-cell bind:click="handleClick" data-title="精氨酸酶缺乏症" title="精氨酸酶缺乏症" />
+    <van-cell bind:click="handleClick" data-title="家族性地中海热" title="家族性地中海热" />
+    <van-cell bind:click="handleClick" data-title="甲基丙二酸血症" title="甲基丙二酸血症" />
+    <van-cell bind:click="handleClick" data-title="肌强直性营养不良" title="肌强直性营养不良" />
+    <van-cell bind:click="handleClick" data-title="进行性家族性肝内胆汁淤积症" title="进行性家族性肝内胆汁淤积症" />
+    <van-cell bind:click="handleClick" data-title="进行性肌营养不良" title="进行性肌营养不良" />
+    <van-cell bind:click="handleClick" data-title="脊髓延髓肌萎缩症（肯尼迪病）" title="脊髓延髓肌萎缩症（肯尼迪病）" />
+    <van-cell bind:click="handleClick" data-title="脊髓性肌萎缩症" title="脊髓性肌萎缩症" />
+    <van-cell bind:click="handleClick" data-title="脊髓小脑性共济失调" title="脊髓小脑性共济失调" />
+    <van-cell bind:click="handleClick" data-title="结节性硬化症" title="结节性硬化症" />
+    <van-cell bind:click="handleClick" data-title="极长链酰基辅酶A脱氢酶缺乏症" title="极长链酰基辅酶A脱氢酶缺乏症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="K" />
+    <van-cell bind:click="handleClick" data-title="卡尔曼综合征" title="卡尔曼综合征" />
+  </view>
+
+  <view>
+    <van-index-anchor index="L" />
+    <van-cell bind:click="handleClick" data-title="朗格汉斯组织细胞增生症" title="朗格汉斯组织细胞增生症" />
+    <van-cell bind:click="handleClick" data-title="莱伦氏综合征" title="莱伦氏综合征" />
+    <van-cell bind:click="handleClick" data-title="Leber遗传性视神经病变" title="Leber遗传性视神经病变" />
+    <van-cell bind:click="handleClick" data-title="淋巴管肌瘤病" title="淋巴管肌瘤病" />
+    <van-cell bind:click="handleClick" data-title="赖氨酸尿蛋白不耐受症" title="赖氨酸尿蛋白不耐受症" />
+    <van-cell bind:click="handleClick" data-title="镰刀型细胞贫血病" title="镰刀型细胞贫血病" />
+  </view>
+
+  <view>
+    <van-index-anchor index="N" />
+    <van-cell bind:click="handleClick" data-title="黏多糖贮积症" title="黏多糖贮积症" />
+    <van-cell bind:click="handleClick" data-title="N-乙酰谷氨酸合成酶缺乏症" title="N-乙酰谷氨酸合成酶缺乏症" />
+    <van-cell bind:click="handleClick" data-title="尼曼匹克病" title="尼曼匹克病" />
+    <van-cell bind:click="handleClick" data-title="Noonan综合征" title="Noonan综合征" />
+    <van-cell bind:click="handleClick" data-title="鸟氨酸氨甲酰基转移酶缺乏症" title="鸟氨酸氨甲酰基转移酶缺乏症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="P" />
+    <van-cell bind:click="handleClick" data-title="帕金森病（青年型、早发型）" title="帕金森病（青年型、早发型）" />
+    <van-cell bind:click="handleClick" data-title="POEMS综合征" title="POEMS综合征" />
+    <van-cell bind:click="handleClick" data-title="Prader-Willi综合征" title="Prader-Willi综合征" />
+  </view>
+
+  <view>
+    <van-index-anchor index="M" />
+    <van-cell bind:click="handleClick" data-title="马凡综合征" title="马凡综合征" />
+    <van-cell bind:click="handleClick" data-title="McCune-Albrigh综合征" title="McCune-Albrigh综合征" />
+  </view>
+
+  <view>
+    <van-index-anchor index="Q" />
+    <van-cell bind:click="handleClick" data-title="全身型重症肌无力" title="热纳综合征（窒息性胸腔失养症）" />
+    <van-cell bind:click="handleClick" data-title="全羧化酶合成酶缺乏症" title="全羧化酶合成酶缺乏症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="R" />
+    <van-cell bind:click="handleClick" data-title="热纳综合征（窒息性胸腔失养症）" title="热纳综合征（窒息性胸腔失养症）" />
+    <van-cell bind:click="handleClick" data-title="溶酶体酸性脂肪酶缺乏症" title="溶酶体酸性脂肪酶缺乏症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="S" />
+    <van-cell bind:click="handleClick" data-title="生物素酶缺乏症" title="生物素酶缺乏症" />
+    <van-cell bind:click="handleClick" data-title="视神经脊髓炎" title="视神经脊髓炎" />
+    <van-cell bind:click="handleClick" data-title="视网膜色素变性" title="视网膜色素变性" />
+    <van-cell bind:click="handleClick" data-title="视网膜母细胞瘤" title="视网膜母细胞瘤" />
+    <van-cell bind:click="handleClick" data-title="Silver-Russell综合征" title="Silver-Russell综合征" />
+    <van-cell bind:click="handleClick" data-title="四氢生物蝶呤缺乏症" title="四氢生物蝶呤缺乏症" />
+    <van-cell bind:click="handleClick" data-title="湿疹血小板减少伴免疫缺陷综合征" title="湿疹血小板减少伴免疫缺陷综合征" />
+  </view>
+
+  <view>
+    <van-index-anchor index="T" />
+    <van-cell bind:click="handleClick" data-title="糖原累积病（I型、Ⅱ型）" title="糖原累积病（I型、Ⅱ型）" />
+    <van-cell bind:click="handleClick" data-title="同型半胱氨酸血症" title="同型半胱氨酸血症" />
+    <van-cell bind:click="handleClick" data-title="特发性心肌病" title="特发性心肌病" />
+    <van-cell bind:click="handleClick" data-title="特发性低促性腺激素性性腺功能减退症" title="特发性低促性腺激素性性腺功能减退症" />
+    <van-cell bind:click="handleClick" data-title="特发性肺动脉高压" title="特发性肺动脉高压" />
+    <van-cell bind:click="handleClick" data-title="特发性肺纤维化" title="特发性肺纤维化" />
+  </view>
+
+  <view>
+    <van-index-anchor index="W" />
+    <van-cell bind:click="handleClick" data-title="戊二酸血症I型" title="戊二酸血症I型" />
+    <van-cell bind:click="handleClick" data-title="威廉姆斯综合征" title="威廉姆斯综合征" />
+  </view>
+
+  <view>
+    <van-index-anchor index="X" />
+    <van-cell bind:click="handleClick" data-title="心脏离子通道病" title="心脏离子通道病" />
+    <van-cell bind:click="handleClick" data-title="先天性肾上腺发育不良" title="先天性肾上腺发育不良" />
+    <van-cell bind:click="handleClick" data-title="先天性高胰岛素性低血糖血症" title="先天性高胰岛素性低血糖血症" />
+    <van-cell bind:click="handleClick" data-title="先天性肌无力综合征" title="先天性肌无力综合征" />
+    <van-cell bind:click="handleClick" data-title="先天性肌强直（非营养不良性肌强直综合征）" title="先天性肌强直（非营养不良性肌强直综合征）" />
+    <van-cell bind:click="handleClick" data-title="先天性脊柱侧弯" title="先天性脊柱侧弯" />
+    <van-cell bind:click="handleClick" data-title="先天性纯红细胞再生障碍性贫血" title="先天性脊柱侧弯" />
+    <van-cell bind:click="handleClick" data-title="血友病" title="血友病" />
+    <van-cell bind:click="handleClick" data-title="先天性胆汁酸合成障碍" title="先天性胆汁酸合成障碍" />
+    <van-cell bind:click="handleClick" data-title="线粒体脑肌病" title="线粒体脑肌病" />
+    <van-cell bind:click="handleClick" data-title="新生儿糖尿病" title="新生儿糖尿病" />
+    <van-cell bind:click="handleClick" data-title="系统性硬化症" title="系统性硬化症" />
+    <van-cell bind:click="handleClick" data-title="X-连锁无丙种球蛋白血症" title="X-连锁无丙种球蛋白血症" />
+    <van-cell bind:click="handleClick" data-title="X-连锁肾上腺脑白质营养不良" title="X-连锁肾上腺脑白质营养不良" />
+    <van-cell bind:click="handleClick" data-title="X-连锁淋巴增生症" title="X-连锁淋巴增生症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="Y" />
+    <van-cell bind:click="handleClick" data-title="原发性肉碱缺乏症" title="原发性肉碱缺乏症" />
+    <van-cell bind:click="handleClick" data-title="遗传性血管性水肿" title="遗传性血管性水肿" />
+    <van-cell bind:click="handleClick" data-title="遗传性大疱性表皮松解症" title="遗传性大疱性表皮松解症" />
+    <van-cell bind:click="handleClick" data-title="遗传性果糖不耐受症" title="遗传性果糖不耐受症" />
+    <van-cell bind:click="handleClick" data-title="遗传性低镁血症" title="遗传性低镁血症" />
+    <van-cell bind:click="handleClick" data-title="遗传性多发脑梗死性痴呆" title="遗传性多发脑梗死性痴呆" />
+    <van-cell bind:click="handleClick" data-title="遗传性痉挛性截瘫" title="遗传性痉挛性截瘫" />
+    <van-cell bind:click="handleClick" data-title="异戊酸血症" title="异戊酸血症" />
+    <van-cell bind:click="handleClick" data-title="原发性联合免疫缺陷" title="原发性联合免疫缺陷" />
+    <van-cell bind:click="handleClick" data-title="原发性遗传性肌张力不全" title="原发性遗传性肌张力不全" />
+    <van-cell bind:click="handleClick" data-title="原发性轻链型淀粉样变" title="原发性轻链型淀粉样变" />
+    <van-cell bind:click="handleClick" data-title="婴儿严重肌阵挛性癫痫(Dravet综合征)" title="婴儿严重肌阵挛性癫痫(Dravet综合征)" />
+    <van-cell bind:click="handleClick" data-title="原发性酪氨酸血症" title="原发性酪氨酸血症" />
+  </view>
+
+  <view>
+    <van-index-anchor index="Z" />
+    <van-cell bind:click="handleClick" data-title="自身免疫性脑炎" title="自身免疫性脑炎" />
+    <van-cell bind:click="handleClick" data-title="自身免疫性垂体炎" title="自身免疫性垂体炎" />
+    <van-cell bind:click="handleClick" data-title="自身免疫性胰岛素受体病" title="自身免疫性胰岛素受体病" />
+    <van-cell bind:click="handleClick" data-title="中链酰基辅酶A脱氢酶缺乏症" title="中链酰基辅酶A脱氢酶缺乏症" />
+    <van-cell bind:click="handleClick" data-title="阵发性睡眠性血红蛋白尿" title="阵发性睡眠性血红蛋白尿" />
+    <van-cell bind:click="handleClick" data-title="重症先天性粒细胞缺乏症 " title="重症先天性粒细胞缺乏症 " />
+  </view>
+
+  <view>
+    <van-index-anchor index="其他" />
+    <van-cell bind:click="handleClick" data-title="21-羟化酶缺乏症" title="21-羟化酶缺乏症 " />
+    <van-cell bind:click="handleClick" data-title="β-酮硫解酶缺乏症" title="β-酮硫解酶缺乏症" />
+  </view>
+</van-index-bar>
+<!-- 搜索栏输入内容后展示 -->
+<van-index-bar wx:else>
+  <view wx:if="{{resultList.length == 0}}">
+    <van-cell title="暂无相关内容" />
+  </view>
+  <view wx:for="{{resultList}}">
+    <van-cell bind:click="handleClick" data-title="{{item}}" title="{{item}}" />
+  </view>
+</van-index-bar>

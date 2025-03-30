@@ -1,0 +1,53 @@
+/* miniprogram/pages/index/index.wxss */
+
+.swiper-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav {
+  width: 750rpx;
+  padding: 20px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; 
+  left: 0rpx; 
+  top: -252rpx
+}
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 75rpx;
+}
+
+.bottom-down{
+  position: absolute;
+  bottom: 300rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-1 { 
+  background: linear-gradient(to bottom, #d0eaff, white);
+}
+.section-2 { 
+  background: linear-gradient(to bottom, #aae9b8, white);
+}
+.section-3 { 
+  background: linear-gradient(to bottom, #e286de, white);
+}
+.section-4 { 
+  background: linear-gradient(to bottom, #da7b6e, white);
+}

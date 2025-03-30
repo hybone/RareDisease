@@ -1,0 +1,26 @@
+<van-notice-bar
+  color="#1989fa"
+  background="#ecf9ff"
+  text="选择您的注册身份"
+/>
+
+<van-grid clickable column-num="1">
+  <van-grid-item
+    icon="user-o"
+    link-type="navigateTo"
+    url="/pages/user/login/login"
+    text="患者"
+  />
+  <van-grid-item
+    icon="shield-o"
+    link-type="navigateTo"
+    url="/pages/user/doctor_login/doctor_login"
+    text="医师"
+  />
+  <van-grid-item
+    icon="award-o"
+    link-type="navigateTo"
+    url="/pages/user/volunteer_login/volunteer_login"
+    text="志愿者"
+  />
+</van-grid>

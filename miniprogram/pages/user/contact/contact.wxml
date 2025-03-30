@@ -1,0 +1,54 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />
+
+<view class="detail-content">
+  <view class="header-card">
+    <view style="display: flex; align-items: center;">
+      <image src="{{receiver.avatarUrl}}" mode="widthFix" class="header-imgs" /> 
+      <view class="header-tags">
+        {{ receiver.name }}
+      </view>
+    </view>
+    <van-divider customStyle="margin-top:5%; margin-bottom:0%;"/>
+  </view>
+
+  <view class="comment-card">
+    <!-- 留言区 -->
+    <view class="info-item-container" wx:for="{{messageList}}" wx:key="_id">
+      <view class="comment-container">
+        <image 
+          src="{{item.senderInfo.avatarUrl}}" 
+          mode="widthFix" 
+          class="comment-avatar" 
+        />
+        <view class="comment-content">
+          <view class="comment-tags">
+            {{ item.senderInfo.name }}
+          </view>
+          <view class="comment-talk">
+            {{ item.content }}
+            <view style="font-size: 12px; color:gray;"> {{ item.publish_time }} </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 发布评论 -->
+
+<van-goods-action>
+  <view style="display: flex; align-items: center;">
+    <van-search
+      value="{{ message }}"
+      shape="round"
+      placeholder="发送留言..."
+      use-left-icon-slot
+      style="width:600rpx;"
+      bind:change="onMessageChange"
+      bind:search="addMessage"
+    ></van-search>
+  </view>
+  <van-button type="primary" size="small" bind:click="addMessage">发送</van-button>
+</van-goods-action>

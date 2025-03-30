@@ -1,0 +1,163 @@
+<!--miniprogram/pages/user/user_center/user_center.wxml-->
+<view wx:if="{{!hasUserInfo}}" bindtap="toLogin">
+    <van-card
+        title="点击此处 注册后享受更好服务"
+        desc=""
+        thumb="https://636c-cloud1-6g9y56f99fe70f33-1318851996.tcb.qcloud.la/icons/user.png?sign=3a0b39370ebf1ace18c19a2bf059b2b1&t=1742050799"
+        centered="true"
+    />
+</view>
+
+<view wx:else>
+  <view class="user_info">
+    <image src="{{userInfo.avatarUrl}}" class="user_info_img"></image>
+    <view class="user_info_name">
+      <view style="font-weight: bold">{{userInfo.name}}</view>
+      <view wx:if="{{userInfo.identity=='patient'}}" style="font-size:small;color:gray;margin-top:15rpx;">愿将清露洗沉疴，化作春风拂病颜。</view>
+      <view wx:if="{{userInfo.identity=='doctor'}}"  style="font-size:small;color:gray;margin-top:15rpx;">但愿世间无疾苦，何妨架上药生尘。</view>
+      <view wx:if="{{userInfo.identity=='volunteer'}}"  style="font-size:small;color:gray;margin-top:15rpx;">点点微光燃大爱，涓涓细流汇江河。</view>
+    </view>
+  </view>
+</view>
+
+<!-- 运动员菜单 -->
+<view wx:if="{{userInfo.identity == 'player' || userInfo.identity == 'superManager'}}">
+  <van-divider wx:if="{{userInfo.identity == 'superManager'}}" contentPosition="center">运动员</van-divider>
+  <van-grid clickable icon-size="32px" column-num="2">
+    <van-grid-item
+      icon="todo-list-o"
+      link-type="navigateTo"
+      url="../../user/registered_event/registered_event"
+      text="我的比赛"
+    />
+    <van-grid-item
+      icon="setting-o"
+      link-type="navigateTo"
+      url="../../user/user_information/user_information"
+      text="个人信息"
+      badge="{{running_order_num}}"
+    />
+  </van-grid>
+</view>
+
+<!-- 赞助商菜单 -->
+<view wx:if="{{userInfo.identity == 'sponsor' || userInfo.identity == 'superManager'}}">
+  <van-divider wx:if="{{userInfo.identity == 'superManager'}}" contentPosition="center">赞助商</van-divider>
+  <van-grid clickable icon-size="32px" column-num="2">
+    <van-grid-item
+      icon="cash-o"
+      link-type="navigateTo"
+      url="../../sponsor/sponsor_publish/sponsor_publish"
+      text="发布赞助"
+      badge="{{running_order_num}}"
+    />
+    <!-- <van-grid-item
+      icon="setting-o"
+      link-type="navigateTo"
+      url="../../user/user_information/user_information"
+      text="机构信息"
+      badge="{{running_order_num}}"
+    /> -->
+  </van-grid>
+</view>
+
+<!-- 校园合伙人菜单 -->
+<view wx:if="{{userInfo.identity == 'partner' || userInfo.identity == 'superManager'}}">
+  <van-divider wx:if="{{userInfo.identity == 'superManager'}}" contentPosition="center">合伙人</van-divider>
+  <van-grid clickable icon-size="32px" column-num="2">
+    <van-grid-item
+      icon="cluster-o"
+      link-type="navigateTo"
+      url="../../team/team_establish/team_establish"
+      text="创建队伍"
+    />
+    <van-grid-item
+      icon="flag-o"
+      link-type="navigateTo"
+      url="../../team/my_team/my_team"
+      text="我的队伍"
+    />
+    <van-grid-item
+      icon="todo-list-o"
+      link-type="navigateTo"
+      url="../../user/registered_event/registered_event"
+      text="已报名的"
+    />
+    <van-grid-item
+      icon="star-o"
+      link-type="navigateTo"
+      url="../../user/user_collection/user_collection"
+      text="我的关注"
+    />
+    <van-grid-item
+    icon="cash-o"
+      link-type="navigateTo"
+      url="../../sponsor/sponsor_request_publish/sponsor_request_publish"
+      text="赞助请求"
+      badge="{{running_order_num}}"
+    />
+    <van-grid-item
+      icon="setting-o"
+      link-type="navigateTo"
+      url="../../user/user_information/user_information"
+      text="个人信息"
+      badge="{{running_order_num}}"
+    />
+  </van-grid>
+</view>
+
+<!-- 裁判与摄制组 -->
+<view wx:if="{{userInfo.identity == 'assistant' || userInfo.identity == 'superManager'}}">
+  <van-divider wx:if="{{userInfo.identity == 'superManager'}}" contentPosition="center">裁判与摄制组</van-divider>
+  <van-grid clickable icon-size="32px" column-num="2">
+    <van-grid-item
+        icon="upgrade"
+        link-type="navigateTo"
+        url="../../news/news_publish_pre/news_publish_pre"
+        text="发布比赛结果"
+    />
+    <van-grid-item
+      icon="setting-o"
+      link-type="navigateTo"
+      url="../../user/user_information/user_information"
+      text="个人信息"
+      badge="{{running_order_num}}"
+    />
+  </van-grid>
+</view>
+
+<view wx:if="{{userInfo.identity == 'superManager'}}">
+  <van-divider contentPosition="center">超级管理员</van-divider>
+    <van-grid clickable icon-size="32px" column-num="2">
+      <van-grid-item
+        icon="upgrade"
+        link-type="navigateTo"
+        url="/pages/event/event_publish/event_publish"
+        text="发起球局"
+      />
+      <van-grid-item
+        icon="chat-o"
+        link-type="navigateTo"
+        url="../../sponsor/sponsor_intention/sponsor_intention"
+        text="赞助意向"
+      />
+      <van-grid-item
+        icon="vip-card-o"
+        link-type="navigateTo"
+        url="../../administor/user_identity/user_identity"
+        text="管理员权限"
+      />
+      <van-grid-item
+        icon="friends-o"
+        link-type="navigateTo"
+        url="../../administor/all_users/all_users"
+        text="用户管理"
+      />
+      <van-grid-item
+        icon="location-o"
+        link-type="navigateTo"
+        url="../../info/court_publish/court_publish"
+        text="发布球场"
+      />
+  </van-grid>
+</view>

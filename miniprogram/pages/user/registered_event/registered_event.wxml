@@ -1,0 +1,11 @@
+<van-toast id="van-toast" />
+
+<view wx:for="{{eventList}}" wx:key="_id" data-eventid="{{item._id}}" bindtap="jumpToEventDetail">
+  <order-item
+      title="{{item.title}}"
+      desc="{{item.description}}"
+      thumb="{{item.image[0]}}"
+      price="比赛时间：{{item.holdingDate}}"
+  >
+  </order-item>
+</view>

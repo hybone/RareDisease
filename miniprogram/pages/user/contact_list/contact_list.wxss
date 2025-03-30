@@ -1,0 +1,14 @@
+.cell-image {
+  width: 50rpx; /* 图片宽度 */
+  height: 50rpx; /* 图片高度 */
+  margin-right: 20rpx; /* 让图片与文本有间距 */
+  border-radius: 50%; /* 如果是头像，可以加圆角 */
+}
+
+.message {
+  color: gray;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

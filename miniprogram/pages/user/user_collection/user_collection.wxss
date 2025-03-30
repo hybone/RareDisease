@@ -1,0 +1,18 @@
+.uihead{
+    padding: 5px 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .uibutton{
+    margin:1px;
+  }
+  
+  .uibody{
+    padding: 5px 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  

@@ -1,0 +1,38 @@
+/* miniprogram/pages/user/user_center/user_center.wxss */
+
+.user_info{ 
+  height: 30%; 
+  padding-bottom: 40rpx; 
+  display: flex; 
+  background-color:#fffffb; 
+} 
+.user_info_img{ 
+  margin: 25rpx; 
+  width: 150rpx; 
+  height: 150rpx; 
+  border-radius: 50%; 
+} 
+.user_info_name{ 
+  /* color: yellowgreen; */ 
+  margin-top: 60rpx;
+} 
+.user_content{ 
+  position: relative; 
+  top: -35rpx; 
+  margin-left: 25rpx; 
+  margin-right: 25rpx; 
+} 
+.navigator { 
+  padding: 10px 40px; 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  background-color: #fffef9;
+  height: 50%; 
+  margin-left: 60rpx; 
+  margin-top: 45rpx; 
+  border-radius: 0%;
+  font-size: 35rpx; 
+  font-weight: bold; 
+  border: 1px solid #130c0e; 
+} 

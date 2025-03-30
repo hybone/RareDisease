@@ -1,0 +1,32 @@
+<van-notice-bar
+  color="#1989fa"
+  background="#ecf9ff"
+  text="选择您想发布的内容"
+/>
+
+<van-grid clickable column-num="1">
+  <van-grid-item
+    icon="user-o"
+    link-type="navigateTo"
+    url="/pages/news/news_publish/news_publish"
+    text="分享"
+  />
+  <van-grid-item
+    icon="shield-o"
+    link-type="navigateTo"
+    url="/pages/news/news_publish/news_publish"
+    text="求助"
+  />
+  <van-grid-item
+    icon="good-job-o"
+    link-type="navigateTo"
+    url="/pages/news/news_publish/news_publish"
+    text="治愈榜样"
+  />
+  <van-grid-item
+    icon="award-o"
+    link-type="navigateTo"
+    url="/pages/news/news_publish/news_publish"
+    text="活动组织"
+  />
+</van-grid>

@@ -1,0 +1,33 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+<view class="order-detail-container">
+  <view class="detail-content">
+    <view class="header-card">
+      <view class="order-title">{{ userInfo.nickName }}</view>
+      <van-divider customStyle="margin-top:5%; margin-bottom:0%;"/>
+      <view class="header-tags">Class: {{ userInfo.class }}</view>
+    </view>
+    
+    <view class="info-card">
+      <view class="info-title">Email</view>
+      <van-divider customStyle="margin-top:0%; margin-bottom:0%;"/>
+      <view class="info-item-container">
+        <view class="info-item"></view>
+          <view class="name">{{ userInfo.email }}</view>
+          <view class="value"></view>
+        </view>
+      </view>
+
+    <view class="info-card">
+      <view class="info-title">isBan</view>
+      <van-divider customStyle="margin-top:0%; margin-bottom:0%;"/>
+      <view class="info-item-container">
+        {{ userInfo.isBan }}
+      </view>
+    </view>
+</view>
+  <van-goods-action>
+    <van-goods-action-button color="#1E8449" text="Ban User" bind:click="ban"/>
+  </van-goods-action>
+</view>

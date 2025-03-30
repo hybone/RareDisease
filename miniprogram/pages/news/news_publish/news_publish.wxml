@@ -1,0 +1,50 @@
+<van-toast id="van-toast" />
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />
+<van-toast id="submit" />
+
+<view style="margin:30px;">
+  <view class="login_welcome">分享</view>
+  <view style="color:#130c0e;">请勿发布违反国家法律法规内容、广告、以及不实信息。</view>
+  <!-- <view style="color:#130c0e;">*你的公开信息（头像、昵称等）</view> -->
+</view>
+
+<view>
+  <form bindsubmit="onSubmit" bindreset="">
+    <view class="top">
+        <view class="input">
+            <van-cell-group>
+              <van-field
+                  name="title"
+                  required
+                  maxlength="30"
+                  autosize
+                  type="textarea"
+                  size="large"
+                  label="标题"
+                  placeholder="请输入标题"
+              />
+              <van-field
+                  name="content"
+                  required
+                  maxlength="200"
+                  autosize
+                  type="textarea"
+                  size="large"
+                  label="内容"
+                  placeholder="请输入内容"
+              />
+            </van-cell-group>
+        </view>
+    </view>
+
+    <view class="yangshi">添加图片展示</view>
+    <view class='uploader'>
+        <van-uploader file-list="{{ fileList }}" bind:after-read="uploadImg" catch:delete="deleteImg" max-count="4"/>
+    </view>
+
+    <view class="login_but">
+      <van-button formType="submit" type="primary" size="large" round color="#9b95c9">发布</van-button>
+    </view>
+  </form>
+</view>

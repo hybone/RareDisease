@@ -1,0 +1,77 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />
+
+<view class="order-detail-container">
+  <view class="detail-content">
+    <view class="header-card">
+      <view wx:if="{{ newsInfo.title }}" class="order-title" style="font-weight: 600;">{{ newsInfo.title }}</view>
+
+      <van-divider customStyle="margin-top:5%; margin-bottom:0%;"/>
+      <view style="display: flex; align-items: center;">
+        <image src="{{newsInfo.publisher.avatarUrl}}" mode="widthFix" class="header-imgs" /> 
+        <view class="header-tags">
+          {{ newsInfo.publisher.name }}
+        </view>
+      </view>
+    </view>
+
+    <view class="info-card">
+      <!-- <view class="info-title">介绍</view> -->
+      <!-- <van-divider customStyle="margin-top:0%; margin-bottom:0%;"/> -->
+      <view wx:for="{{newsInfo.content}}" wx:key="item" class="info-item-container">
+        {{item}}
+      </view>
+    </view>
+
+    <view class="info-card">
+      <block wx:for="{{newsInfo.image}}" wx:key="item">
+          <view class="demo-pic-item">
+            <image class="demo-pic" mode="widthFix" src="{{item}}" data-src="{{item}}"  bindtap="previewImage"/>
+          </view>
+      </block>
+    </view>
+
+    <view class="comment-card">
+      <!-- 发布评论 -->
+      <view class="info-item-container">
+        <view style="display: flex; align-items: center;">
+          <image src="{{newsInfo.publisher.avatarUrl}}" mode="widthFix" class="comment-avatar" /> 
+          <van-search
+            value="{{ comment }}"
+            shape="round"
+            placeholder="说点什么..."
+            use-left-icon-slot
+            style="width:470rpx;"
+            bind:change="onCommentChange"
+            bind:search="addComment"
+          ></van-search>
+          <van-button type="primary" size="small" bind:click="addComment">发送</van-button>
+        </view>
+      </view>
+      
+      <!-- 评论区 -->
+      <view class="info-item-container" wx:for="{{commentList}}" wx:key="_id">
+        <view class="comment-container">
+          <image 
+            src="{{item.publisher.avatarUrl}}" 
+            data-openid="{{item.publisher._openid}}" 
+            bind:tap="jumpToUserDetail"
+            mode="widthFix" 
+            class="comment-avatar" 
+          />
+          <view class="comment-content">
+            <view class="comment-tags">
+              {{ item.publisher.name }}
+            </view>
+            <view class="comment-talk">
+              {{ item.content }}
+              <view style="font-size: 12px; color:gray;"> {{ item.publish_time }} </view>
+            </view>
+          </view>
+          <van-goods-action-icon text="{{item.like}}" icon="like-o" bind:click="likeComment" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

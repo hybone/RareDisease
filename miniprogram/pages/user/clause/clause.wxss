@@ -1,0 +1,26 @@
+.title{
+    text-align: center;
+    font-size:30px;
+    margin:30px 20px 10px 10px;
+    /* 上右下左 */
+  }
+  
+  .title-tap{
+    line-height: 1.5;
+    text-align: right;
+    margin:30px 20px 30px 10px;
+  }
+  
+  .text-two{
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin:30px 20px 10px 20px;
+  }
+  
+  .text-head{
+    text-indent: 30px;
+  }
+  
+  .text-bold{
+    font-weight: bold;
+  }

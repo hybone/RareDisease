@@ -1,0 +1,58 @@
+<van-toast id="van-toast" />
+
+<view class='container'>
+    <view class = "item">
+            <text class='info1' >姓名</text>
+            <text class='info2'>{{name}}</text>
+        <image class='edit' src = "../../../icons/edit.png" mode = "widthFix" catchtap = "edit1"/>
+    </view>
+    
+    <view class = "item">
+            <text class='info1' >擅长的位置</text>
+            <text class='info2'>{{position}}</text>
+        <image class='edit' src = "../../../icons/edit.png" mode = "widthFix" catchtap = "showPopup2"/>
+    </view>
+
+    <view class = "item">
+            <text class='info1' >自我介绍</text>
+            <text class='info2'>{{introduction}}</text>
+        <image class='edit' src = "../../../icons/edit.png" mode = "widthFix" catchtap = "edit3"/>
+    </view>
+
+    <van-dialog
+        use-slot
+        title="输入新的名字"
+        show="{{ show1 }}"
+        show-cancel-button
+        bind:confirm="confirm1"
+        >
+        <van-cell-group>
+            <van-field
+                bind:change='changeName'
+                type="text"
+                placeholder="在此输入新的名字"
+            />
+        </van-cell-group>
+    </van-dialog>
+
+    <van-popup show="{{ show2 }}" position="bottom" closeable="true" round="true" 
+      bind:close="onClose2" close-icon="success"> 
+      <van-picker columns="{{ columns }}" bind:change="onChange2" />
+    </van-popup>
+
+    <van-dialog
+        use-slot
+        title="输入新的自我介绍"
+        show="{{ show3 }}"
+        show-cancel-button
+        bind:confirm="confirm3"
+        >
+        <van-cell-group>
+            <van-field
+                bind:change='changeIntroduction'
+                type="text"
+                placeholder="在此输入新的自我介绍"
+            />
+        </van-cell-group>
+    </van-dialog>
+</view>

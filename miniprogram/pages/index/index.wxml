@@ -1,0 +1,32 @@
+<swiper class="swiper-container" vertical="true" circular="false">
+  <swiper-item class="section section-1">
+    <view class="nav">
+      <image src="https://6963-icloud-1-7g295fqh2b20801e-1350555031.tcb.qcloud.la/icons/deepseek.jpg?sign=db61ad5e75e40ae6fed8bac5f0509f0a&t=1742786042" mode="aspectFill" class="avatar" />
+      <view style="line-height: 47px; font-size: 20px; font-weight: 500;">罕见病AI助手</view>
+      <!-- <view style="line-height: 26px;padding: 0px 16px; font-size: 32rpx;">欢迎使用本应用</view> -->
+      <van-search class="nav-search"
+        value="{{ value }}"
+        shape="round"
+        placeholder="为您量身定制的问答助手"
+        readonly
+        bind:click-input="jumpToDeepseek"
+        background="d0eaff"
+      />
+    </view>
+    <van-icon class="bottom-down" name="down" />
+  </swiper-item>
+  <swiper-item class="section section-2">
+    <view class="nav">
+      <image src="https://6963-icloud-1-7g295fqh2b20801e-1350555031.tcb.qcloud.la/icons/share.png?sign=9c61705694075ed2d010a453fd21f2d5&t=1743235909" mode="aspectFill" class="avatar" />
+      <view style="line-height: 47px; font-size: 20px; font-weight: 500;">分享您的信息</view>
+      <van-button type="default" round class="nav-search" bind:click="jumpToPublishPre">发布信息</van-button>
+    </view>
+    <van-icon class="bottom-down" name="down" />
+  </swiper-item>
+  <swiper-item class="section section-3">
+    区块 3
+    <van-button type="default" round class="nav-search" bind:click="jumpToLogin">test</van-button>
+    <van-icon class="bottom-down" name="down" />
+  </swiper-item>
+  <swiper-item class="section section-4">区块 4</swiper-item>
+</swiper>
