@@ -7,6 +7,5 @@
   >
     <image slot="icon" src="{{item.avatarUrl}}" class="cell-image" />
     <view slot="title">{{item.name}}</view>
-    <!-- <view slot="title" class="message">{{ item.content }}</view> -->
   </van-cell>
 </view>

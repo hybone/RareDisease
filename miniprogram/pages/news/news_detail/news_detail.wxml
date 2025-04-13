@@ -36,7 +36,7 @@
       <!-- 发布评论 -->
       <view class="info-item-container">
         <view style="display: flex; align-items: center;">
-          <image src="{{newsInfo.publisher.avatarUrl}}" mode="widthFix" class="comment-avatar" /> 
+          <image src="{{userInfo.avatarUrl}}" mode="widthFix" class="comment-avatar" /> 
           <van-search
             value="{{ comment }}"
             shape="round"

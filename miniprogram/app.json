@@ -22,7 +22,8 @@
     "pages/doctor/doctor_detail/doctor_detail",
     "pages/chatBot/chatBot",
     "pages/user/contact/contact",
-    "pages/user/contact_list/contact_list"
+    "pages/user/contact_list/contact_list",
+    "pages/calculator/calculator"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

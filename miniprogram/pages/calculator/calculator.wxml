@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="display">
+    {{ result }}
+  </view>
+
+  <view class="buttons">
+    <block wx:for="{{ buttons }}" wx:key="index">
+      <button class="btn {{item.class}}" bindtap="onButtonTap" data-value="{{item.value}}">
+        {{ item.label }}
+      </button>
+    </block>
+  </view>
+</view>

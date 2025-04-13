@@ -5,9 +5,9 @@
 <view class="detail-content">
   <view class="header-card">
     <view style="display: flex; align-items: center;">
-      <image src="{{receiver.avatarUrl}}" mode="widthFix" class="header-imgs" /> 
+      <image src="{{theySide.avatarUrl}}" mode="widthFix" class="header-imgs" /> 
       <view class="header-tags">
-        {{ receiver.name }}
+        {{ theySide.name }}
       </view>
     </view>
     <van-divider customStyle="margin-top:5%; margin-bottom:0%;"/>

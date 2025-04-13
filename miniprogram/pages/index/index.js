@@ -95,7 +95,7 @@ Page({
 
   jumpToLogin() {
     wx.navigateTo({
-      url: '../user/login/login',
+      url: '../calculator/calculator',
     })
   },
 

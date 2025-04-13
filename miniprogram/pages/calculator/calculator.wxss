@@ -1,0 +1,43 @@
+/* 整体布局 */
+.container {
+  display: flex;  /* 子元素将按照弹性盒模型进行排列 */
+  flex-direction: column; /* 子元素是从上到下依次排列的 */
+  align-items: center;  /* 在横向方向居中子元素 */
+  justify-content: flex-end;  /* 把子元素都推到容器的底部 */
+  height: 100vh;
+  background-color: black;
+}
+
+/* 显示区域 */
+.display {
+  width: 100%;
+  text-align: right;
+  color: white;
+  font-size: 48px;
+  padding: 20px 40px 20px 20px;
+  box-sizing: border-box;
+}
+
+/* 按钮区域 */
+.buttons {
+  display: grid;  /* 网格布局 */
+  grid-template-columns: repeat(4, 1fr);  /* 创建4列，每列宽度为1fr, 表示可用空间的一份，即平均分配容器宽度的四等份 */
+  gap: 10px;  /* 按钮间距 */
+  padding: 30px;
+}
+
+/* 按钮样式 */
+.btn {
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  border: none;
+}
+
+/* 颜色分类 */
+.btn.light-gray { background-color: #a5a5a5; }
+.btn.dark-gray { background-color: #333; color: white; }
+.btn.orange { background-color: #ff9f0a; color: white; }

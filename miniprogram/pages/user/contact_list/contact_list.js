@@ -39,6 +39,7 @@ Page({
       }
     ])).get({
       success:function(res){
+        console.log(res.data)
         let chatList = []
         for(let i = 0; i < res.data.length; i++) {
           if(res.data[i].sender == openid) {
@@ -74,7 +75,9 @@ Page({
     })
   },
 
-  openChat() {
+  openChat(e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.setStorageSync('user_detail_openid', e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../contact/contact',
     })
@@ -91,7 +94,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.onLoad()
   },
 
   /**
