@@ -31,6 +31,7 @@ Page({
   // 按钮点击事件
   onButtonTap(event) {
     const value = event.currentTarget.dataset.value;
+    console.log(value)
 
     if (value >= "0" && value <= "9") {
       this.appendNumber(value);
@@ -109,7 +110,7 @@ Page({
       currentInput: String(result),
       previousInput: "",
       operation: null,
-      expression: ""
+      expression: String(result)
     });
   },
   
@@ -130,7 +131,11 @@ Page({
     let { currentInput } = this.data;
     if (currentInput) {
       currentInput = String(-parseFloat(currentInput));
-      this.setData({ result: currentInput, currentInput });
+      this.setData({ 
+        result: currentInput,
+        expression: currentInput,
+        currentInput
+      });
     }
   },
 
@@ -139,7 +144,11 @@ Page({
     let { currentInput } = this.data;
     if (currentInput) {
       currentInput = String(parseFloat(currentInput) / 100);
-      this.setData({ result: currentInput, currentInput });
+      this.setData({ 
+        result: currentInput,
+        expression: currentInput,
+        currentInput
+      });
     }
   }
 });

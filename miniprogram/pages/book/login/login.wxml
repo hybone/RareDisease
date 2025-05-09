@@ -1,0 +1,21 @@
+<!--pages/book/login/login.wxml-->
+<van-dialog id="van-dialog" />
+
+<van-cell-group>
+  <van-field
+    value="{{ name }}"
+    placeholder="请输入用户名"
+    label="用户名"
+    border="{{ false }}"
+    bind:change="onChangeName"
+  />
+  <van-field
+    value="{{ password }}"
+    placeholder="请输入密码"
+    label="密码"
+    border="{{ false }}"
+    bind:change="onChangePassword"
+  />
+</van-cell-group>
+<van-button type="primary" style="position: relative; left: 280rpx; top: 81rpx" bind:click="register">注册</van-button>
+<van-button type="primary" style="position: relative; left: 300rpx; top: 81rpx" bind:click="login">登录</van-button>

@@ -1,0 +1,4 @@
+<!--pages/book/list/list.wxml-->
+<van-cell-group wx:for="{{ books }}" wx:key="_id">
+  <van-cell title="{{item.name}}" value="{{item.author}}" label="{{item.count}}" border="{{ false }}" />
+</van-cell-group>

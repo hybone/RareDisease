@@ -23,7 +23,9 @@
     "pages/chatBot/chatBot",
     "pages/user/contact/contact",
     "pages/user/contact_list/contact_list",
-    "pages/calculator/calculator"
+    "pages/calculator/calculator",
+    "pages/book/list/list",
+    "pages/book/login/login"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

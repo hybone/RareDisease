@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-        newsList:"",     //比赛列表
+        newsList:[],     //比赛列表
         MAX_LIMIT:10,     //一次最多取出的订单数(超参)
         times:1,          //当前是第几次触底(onLoard时重置)
         batchTimes:0,     //最多分几次取出订单(由onLoad赋值)
