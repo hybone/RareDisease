@@ -125,6 +125,12 @@ Component({
     feedbackType: "",
     textareaHeight: 50,
     curLineCount: 1,
+    historyOption: [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 }
+    ],
+    historyValue: 0
   },
   attached: async function () {
     const chatMode = this.data.chatMode;
@@ -151,38 +157,12 @@ Component({
       }
 
       // 初始化第一条记录为welcomeMessage
-      // const record = {
-      //   content: bot.welcomeMessage,
-      //   record_id: "record_id" + String(+new Date() + 10),
-      //   role: "assistant",
-      //   hiddenBtnGround: true,
-      // };
-
-      // 初始化用户背景信息
-      const openid = wx.getStorageSync('openid')
-      const result = await db.collection('user').where({'_openid':openid}).get()
-      const userInfo = result.data[0]
-      console.log(userInfo)
-      let content = ''
-      if(userInfo.identity === 'patient') {
-        content += '本人为患者' +
-                   '称呼:' + userInfo.name + '.' +
-                   '所患病症:' + userInfo.disease
-      } else if(userInfo.identity === 'doctor') {
-        content += '本人为医生' +
-                   '称呼:' + userInfo.name + '.' +
-                   '职级:' + userInfo.rank + '.' +
-                   '医院:' + userInfo.hospital + '.' +
-                   '擅长:' + userInfo.good_at + '.' +
-                   '介绍:' + userInfo.introduction
-      }
-
       const record = {
-        content,
+        content: bot.welcomeMessage,
         record_id: "record_id" + String(+new Date() + 10),
-        role: "user",
-        type: "background"
-      }
+        role: "assistant",
+        hiddenBtnGround: true,
+      };
 
       const { chatRecords } = this.data;
 
@@ -210,6 +190,30 @@ Component({
     this.setData({
       contentHeightInScrollViewTop: topHeight,
     });
+
+    const note = wx.getStorageSync('note')
+    const userInfo = wx.getStorageSync('userInfo')
+    const disease = userInfo.disease
+    if(note != '') {
+      let inputValue = ''
+      if(note == 'hospital') {
+        inputValue = '全国治疗' + disease + '的医院有哪些？'
+      }
+      else if(note == 'organization') {
+        inputValue = disease + '的患者机构有哪些？'
+      }
+      else if(note == 'medicine') {
+        inputValue = '现在有哪些治疗' + disease + '的药正在研发？'
+      }
+      else if(note == 'example') {
+        inputValue = '提供几个' + disease + '患者积极面对生活的案例'
+      }
+      this.setData({
+        inputValue
+      }, function() {
+        
+      })
+    }
   },
   methods: {
     handleLineChange: function (e) {

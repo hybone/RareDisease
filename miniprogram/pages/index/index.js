@@ -9,6 +9,8 @@ Page({
   data: {
       userInfo:{},          //存用户信息
       hasUserInfo:false,     //是否有用户信息
+      value: '',
+      show: false
   },
 
   /**
@@ -81,13 +83,27 @@ Page({
     })
   },
 
-  jumpToDeepseek() {
+  jumpToDeepseek(e) {
+    if(!this.data.hasUserInfo) {
+      wx.navigateTo({
+        url: "../user/login_pre/login_pre",
+      })
+      return
+    }
+    const note = e.currentTarget.dataset.note;
+    wx.setStorageSync('note', note)
     wx.navigateTo({
       url: "../chatBot/chatBot",
     })
   },
 
   jumpToPublishPre() {
+    if(!this.data.hasUserInfo) {
+      wx.navigateTo({
+        url: "../user/login_pre/login_pre",
+      })
+      return
+    }
     wx.navigateTo({
       url: "../news/news_publish_pre/news_publish_pre",
     })
@@ -97,6 +113,33 @@ Page({
     wx.navigateTo({
       url: '../calculator/calculator',
     })
+  },
+
+  jumpToUserCenter() {
+    wx.setStorageSync('user_detail_openid', this.data.userInfo._openid)
+    wx.navigateTo({
+      url: '../user/user_detail/user_detail',
+    })
+  },
+
+  jumpToUserInfomation() {
+    wx.navigateTo({
+      url: '../user/user_information/user_information',
+    })
+  },
+
+  jumpToNewsCheck() {
+    wx.navigateTo({
+      url: '../news/news_check_list/news_check_list',
+    })
+  },
+
+  showPopup() {
+    this.setData({ show: true });
+  },
+
+  onClose() {
+    this.setData({ show: false });
   },
 
   /**

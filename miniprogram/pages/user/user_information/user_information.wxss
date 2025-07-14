@@ -38,6 +38,7 @@ page{
     top: 80rpx;
     color:#353535;
     font-size:30rpx;
+    padding-right: 50px;
   }
   .edit{
     position: absolute;

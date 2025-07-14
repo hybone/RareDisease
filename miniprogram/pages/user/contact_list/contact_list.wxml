@@ -1,3 +1,5 @@
+<van-dialog id="van-dialog" />
+
 <view>
   <van-cell 
     wx:for="{{chatList}}" 

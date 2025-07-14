@@ -9,7 +9,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userInfo: {}
+        userInfo: {},
+        myOpenid: ''
     },
 
     /**
@@ -17,12 +18,13 @@ Page({
      */
     onLoad(options) {
         const user_detail_openid = wx.getStorageSync('user_detail_openid');
+        const myOpenid = wx.getStorageSync('openid')
         const that=this;
-
         db.collection('user').where({'_openid':user_detail_openid}).get({ 
             success:function(res){
               that.setData({
-                  userInfo:res.data[0]
+                  userInfo:res.data[0],
+                  myOpenid
               })
             }
         })

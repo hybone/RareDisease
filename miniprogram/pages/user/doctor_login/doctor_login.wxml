@@ -29,17 +29,17 @@
                   required
                   autosize
                   size="large"
-                  label="就职医院"
-                  placeholder="请输入就职医院"
+                  label="身份"
+                  placeholder="请输入身份"
                 />
-                <van-field
+                <!-- <van-field
                   name="rank"
                   required
                   autosize
                   size="large"
                   label="职级"
                   placeholder="请输入职级"
-                />
+                /> -->
                 <van-field
                   name="good_at"
                   required

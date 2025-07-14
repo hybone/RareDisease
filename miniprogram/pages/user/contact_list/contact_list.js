@@ -1,4 +1,5 @@
 const db = wx.cloud.database()
+import Dialog from '@vant/weapp/dialog/dialog';
 
 Page({
 
@@ -15,6 +16,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const hasUserInfo = wx.getStorageSync('hasUserInfo')
+    if(!hasUserInfo) {
+      Dialog.alert({
+        message: '请先完成注册',
+      }).then(() => {
+        wx.navigateTo({
+          url: '../login_pre/login_pre'
+        })
+      });
+    }
+
     const that=this;
 
     // 获取用户信息

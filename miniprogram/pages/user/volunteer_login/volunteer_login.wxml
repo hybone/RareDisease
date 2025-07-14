@@ -4,7 +4,7 @@
 <van-toast id="order-submit" />
 
 <view style="margin:30px;">
-  <view class="login_welcome">注册</view>
+  <view class="login_welcome">志愿者注册</view>
   <view style="color:#130c0e;">为提供优质服务，需要获取您的以下信息</view>
   <!-- <view style="color:#130c0e;">*你的公开信息（头像、昵称等）</view> -->
 </view>
@@ -33,17 +33,6 @@
                     size="large"
                     label="年龄"
                     placeholder="请输入年龄"
-                />
-                <van-field
-                    name="disease"
-                    value="{{disease}}"
-                    required
-                    autosize
-                    readonly="true"
-                    size="large"
-                    label="所患病症"
-                    placeholder="点击此处搜索"
-                    bind:click-input="jumpToDiseaseChoose"
                 />
             </van-cell-group>
         </view>

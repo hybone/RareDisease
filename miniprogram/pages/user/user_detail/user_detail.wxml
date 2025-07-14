@@ -28,7 +28,7 @@
     </view>
   </view>
 
-  <van-goods-action>
+  <van-goods-action wx:if="{{ userInfo._openid != myOpenid }}">
     <van-goods-action-button color="#1E8449" text="留言" bind:click="jumpToContact"/>
   </van-goods-action>
 </view>

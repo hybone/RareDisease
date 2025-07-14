@@ -11,12 +11,11 @@ Page({
     show2: false,
     show3: false,
     name: '',
-    position:'',
+    disease:'',
     newName:'',
-    newPosition:'',
+    newDisease:'',
     introduction:'',
     newIntroduction:'',
-    columns: ['前锋', '中场', '后卫','门将'],
   },
 
   /**
@@ -29,7 +28,7 @@ Page({
       success:function(res){
         that.setData({
           name: res.data[0].name,
-          position: res.data[0].position,
+          disease: res.data[0].disease,
           introduction: res.data[0].introduction,
         })
       }
@@ -65,33 +64,31 @@ Page({
     })
   },
 
-  // 比赛位置
-  showPopup2() {
-    this.setData({ show2: true });
-    if(this.data.newPosition == ''){
-        this.setData({
-          newPosition: '前锋'
-        })
-    }
+  jumpToDiseaseChoose() {
+    wx.navigateTo({
+      url: '../disease_choose/disease_choose',
+    })
   },
 
   onClose2() {
     this.setData({ show2: false });
     const openid = wx.getStorageSync('openid')
+    const userInfo=wx.getStorageSync('userInfo');
+    let disease = wx.getStorageSync('disease')
+    if(disease != '') {
+      userInfo.disease = disease
+    }
     const that = this
-    const userInfo=wx.getStorageSync('userInfo')
-    userInfo.position = this.data.newPosition
-    console.log(this.data.newPosition)
+    console.log(disease)
     db.collection('user').where({'_openid':openid}).update({
         data:{
-            position: that.data.newPosition
+          disease: userInfo.disease
         },
         success: function(res) {
           wx.setStorageSync('userInfo', userInfo)
           that.setData({
-            position: that.data.newPosition
+            disease
           })
-          Toast("更新成功")
         }
     })
   },
@@ -137,6 +134,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad()
+    this.onClose2()
   },
 })

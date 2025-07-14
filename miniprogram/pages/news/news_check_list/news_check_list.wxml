@@ -1,0 +1,11 @@
+<van-toast id="van-toast" />
+
+<view wx:for="{{newsList}}" wx:key="_id" data-newsid="{{item._id}}" bindtap="jumpToNewsDetail">
+  <order-item
+      title="{{item.title}}"
+      desc="{{item.content}}"
+      thumb="{{item.image[0]}}"
+      thumbMode="scaleToFill"
+      price="待审核"
+  />
+</view>

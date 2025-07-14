@@ -5,7 +5,7 @@
 
 <view style="margin:30px;">
   <view class="login_welcome">分享</view>
-  <view style="color:#130c0e;">请勿发布违反国家法律法规内容、广告、以及不实信息。</view>
+  <view style="color:#130c0e;">请勿发布违反国家法律法规内容、广告、以及不实信息。发布的内容将经过管理员审核后公开。</view>
   <!-- <view style="color:#130c0e;">*你的公开信息（头像、昵称等）</view> -->
 </view>
 

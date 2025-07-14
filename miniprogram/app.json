@@ -25,12 +25,14 @@
     "pages/user/contact_list/contact_list",
     "pages/calculator/calculator",
     "pages/book/list/list",
-    "pages/book/login/login"
+    "pages/book/login/login",
+    "pages/news/news_check_list/news_check_list",
+    "pages/news/news_check_detail/news_check_detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "罕见病大全",
+    "navigationBarTitleText": "生命之光助手",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true
@@ -113,12 +115,6 @@
         "text": "留言",
         "iconPath": "icons/message.png",
         "selectedIconPath": "icons/message_filled.png"
-      },
-      {
-        "pagePath": "pages/user/user_center/user_center",
-        "text": "个人中心",
-        "iconPath": "icons/user.png",
-        "selectedIconPath": "icons/user_filled.png"
       }
     ]
   }

@@ -129,13 +129,13 @@ Page({
       return false
     }
     if(hospital=="") {
-      Notify({ type: 'danger', duration:1000, message: '请输入就职医院'})
+      Notify({ type: 'danger', duration:1000, message: '请输入身份'})
       return false
     }
-    if(rank=="") {
-      Notify({ type: 'danger', duration:1000, message: '请输入职级'})
-      return false
-    }
+    // if(rank=="") {
+    //   Notify({ type: 'danger', duration:1000, message: '请输入职级'})
+    //   return false
+    // }
     if(good_at=="") {
       Notify({ type: 'danger', duration:1000, message: '请选择擅长领域'})
       return false

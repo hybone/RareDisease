@@ -94,7 +94,6 @@ Page({
       data: {
           name,
           age,
-          disease:this.data.disease,
           publish_time:timenow,
           publish_time_mm:time,
           avatarUrl:this.data.avatarUrl,
@@ -139,10 +138,6 @@ Page({
     }
     if(age=="") {
       Notify({ type: 'danger', duration:1000, message: '请输入年龄'})
-      return false
-    }
-    if(this.data.disease=="") {
-      Notify({ type: 'danger', duration:1000, message: '请选择所患病症'})
       return false
     }
     if(this.data.avatarUrl==defaultAvatarUrl) {

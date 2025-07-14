@@ -1,32 +1,98 @@
+<van-popup
+  show="{{ show }}"
+  position="top"
+  custom-style="height: 28%;"
+  bind:close="onClose"
+>
+<van-cell is-link title="修改信息" link-type="navigateTo" bind:tap="jumpToUserInfomation"/>
+<van-cell is-link title="个人空间" link-type="navigateTo" bind:tap="jumpToUserCenter"/>
+<van-cell is-link title="历史记录" link-type="navigateTo" url="/pages/dashboard/index"/>
+<van-cell wx:if="{{userInfo.identity == 'admin'}}" is-link title="资讯审核" link-type="navigateTo" bind:tap="jumpToNewsCheck"/>
+</van-popup>
 <swiper class="swiper-container" vertical="true" circular="false">
   <swiper-item class="section section-1">
-    <view class="nav">
-      <image src="https://6963-icloud-1-7g295fqh2b20801e-1350555031.tcb.qcloud.la/icons/deepseek.jpg?sign=db61ad5e75e40ae6fed8bac5f0509f0a&t=1742786042" mode="aspectFill" class="avatar" />
-      <view style="line-height: 47px; font-size: 20px; font-weight: 500;">罕见病AI助手</view>
-      <!-- <view style="line-height: 26px;padding: 0px 16px; font-size: 32rpx;">欢迎使用本应用</view> -->
+    <view class="nav" style="margin-top: 0;">
+      <image src="{{userInfo.avatarUrl}}" mode="aspectFill" class="header-imgs" bind:tap="showPopup" />
+      <!-- <image src="https://6963-icloud-1-7g295fqh2b20801e-1350555031.tcb.qcloud.la/icons/deepseek.jpg?sign=db61ad5e75e40ae6fed8bac5f0509f0a&t=1742786042" mode="aspectFill" class="avatar" /> -->
+      <view class="nav-font">
+        <view style="font-weight:1000;  margin-left: 20px; margin-bottom: 5px; text-align: center;">
+          你好用户！
+        </view>
+        <view style="font-weight:1000;  margin-left: 20px; margin-bottom: 5px; text-align: center;">
+          我是Rara，今天能帮助你什么？
+        </view>
+      </view>
       <van-search class="nav-search"
         value="{{ value }}"
         shape="round"
-        placeholder="为您量身定制的问答助手"
+        placeholder="为您量身定做的助手~"
         readonly
         bind:click-input="jumpToDeepseek"
+        type="textarea"
         background="d0eaff"
+        style="width: 700rpx;"
       />
+      <!-- <view class="nav-button">
+        <van-button round type="info" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;" 
+        data-note='hospital' bind:click="jumpToDeepseek">实时</van-button>
+        <van-button round type="info" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;" 
+        data-note='organization' bind:click="jumpToDeepseek">病患组织</van-button>
+        <van-button round type="info" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;" 
+        data-note='medicine' bind:click="jumpToDeepseek">药物研发</van-button>
+        <van-button round type="info" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;" 
+        data-note='example' bind:click="jumpToDeepseek">生活榜样</van-button>
+      </view> -->
     </view>
     <van-icon class="bottom-down" name="down" />
   </swiper-item>
   <swiper-item class="section section-2">
     <view class="nav">
-      <image src="https://6963-icloud-1-7g295fqh2b20801e-1350555031.tcb.qcloud.la/icons/share.png?sign=9c61705694075ed2d010a453fd21f2d5&t=1743235909" mode="aspectFill" class="avatar" />
-      <view style="line-height: 47px; font-size: 20px; font-weight: 500;">分享您的信息</view>
-      <van-button type="default" round class="nav-search" bind:click="jumpToPublishPre">发布信息</van-button>
+      <image src="{{userInfo.avatarUrl}}" mode="aspectFill" class="header-imgs" bind:tap="showPopup" /> 
+      <!-- <image src="https://6963-icloud-1-7g295fqh2b20801e-1350555031.tcb.qcloud.la/icons/share.png?sign=9c61705694075ed2d010a453fd21f2d5&t=1743235909" mode="aspectFill" class="avatar" /> -->
+      <view class="nav-font">
+        <view style="font-size: 240px; color:palegreen; position: relative; top: 140px; left: 40px;">说</view>
+        <!-- <view style="font-weight:500;  margin-left: 20px; margin-bottom: 15px;">
+          期待药物能纳入医保保障，给予每一个患者平等治疗的机会
+        </view> -->
+        <view style="font-weight:1000; text-align: left; margin-bottom: 15px;">
+          虽然我们生理上有缺陷，但我们依然努力去追求自己的生活，为社会做着自己的贡献
+        </view>
+        <view style="font-weight:1000; text-align: left; margin-left: 30px; margin-bottom: 15px;" >
+          希望社会对我们多一些宽容与理解
+        </view>
+        <view style="font-weight:500; text-align: left; margin-left: 10px; ">
+          我们只是用不完美的身体换来了
+        </view>
+        <view style="font-weight:500; text-align: left; margin-left: 10px; margin-bottom: 15px;">
+          更坚强的内心
+        </view>
+        <view style="font-weight:1000; text-align: left; margin-left: 80px; margin-bottom: 15px;">
+          还孩子一双明亮的眼睛
+        </view>
+      </view>
+      <van-search class="nav-search"
+        value="{{ value }}"
+        shape="round"
+        placeholder="点击说出你的故事~"
+        readonly
+        bind:click-input="jumpToPublishPre"
+        type="textarea"
+        background="d0eaff"
+        style="width: 700rpx;"
+      />
+      <view class="nav-button">
+          <van-button round type="primary" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;">分享</van-button>
+          <van-button round type="primary" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;">求助</van-button>
+          <van-button round type="primary" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;">治愈榜样</van-button>
+          <van-button round type="primary" custom-style="width: 165rpx; height: 60rpx; font-size: 26rpx; margin: 6rpx;">活动组织</van-button>
+        </view>
     </view>
     <van-icon class="bottom-down" name="down" />
   </swiper-item>
-  <swiper-item class="section section-3">
+  <!-- <swiper-item class="section section-3">
     区块 3
     <van-button type="default" round class="nav-search" bind:click="jumpToLogin">test</van-button>
     <van-icon class="bottom-down" name="down" />
   </swiper-item>
-  <swiper-item class="section section-4">区块 4</swiper-item>
+  <swiper-item class="section section-4">区块 4</swiper-item> -->
 </swiper>

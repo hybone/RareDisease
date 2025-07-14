@@ -125,7 +125,7 @@ Page({
       data: {
           title,
           content,
-          state: 'Y',
+          state: 'N',
           type: '分享',
           publish_time:timenow,
           publish_time_mm:time,
@@ -139,6 +139,7 @@ Page({
         })
         Dialog.alert({
           title: '发布成功',
+          message: '发布的内容将在审核后公开',
         }).then(() => {
           wx.switchTab({
             url: '../news_list/news_list',

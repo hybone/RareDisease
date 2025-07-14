@@ -116,7 +116,7 @@ Page({
               wx.setStorageSync('userInfo',userInfo)
               wx.setStorageSync('hasUserInfo', true)
               wx.switchTab({
-                url: '../user_center/user_center',
+                url: '../../index/index',
               })
             }
           })
@@ -137,12 +137,8 @@ Page({
       Notify({ type: 'danger', duration:1000, message: '请输入姓名'})
       return false
     }
-    if(age=="") {
-      Notify({ type: 'danger', duration:1000, message: '请输入年龄'})
-      return false
-    }
     if(this.data.disease=="") {
-      Notify({ type: 'danger', duration:1000, message: '请选择所患病症'})
+      Notify({ type: 'danger', duration:1000, message: '请选择关注'})
       return false
     }
     if(this.data.avatarUrl==defaultAvatarUrl) {
