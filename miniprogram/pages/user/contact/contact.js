@@ -36,11 +36,11 @@ Page({
 
     // 获取对方用户信息
     const theySideOpenid=wx.getStorageSync('user_detail_openid')
-    db.collection('user').doc(theySideOpenid).get({
+    db.collection('user').where({'_openid':theySideOpenid}).get({
       success:function(res){
-        console.log(res.data)
+        console.log("theySize:", res.data[0])
         that.setData({
-          theySide:res.data
+          theySide: res.data[0]
         })
       }
     })
